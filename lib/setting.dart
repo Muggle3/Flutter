@@ -11,7 +11,9 @@ class _SetPageWidgetState extends State<SetPageWidget> {
     List<Widget> _list = new List();
     for (int i = 0; i < titleItems.length; i++) {
       _list.add(buildListData(
-          context, titleItems[i], iconItems[i], subTitleItems[i]));
+        context,
+        titleItems[i], /*iconItems[i], subTitleItems[i]*/
+      ));
     }
     // 分割线
     // var divideTiles =
@@ -23,8 +25,12 @@ class _SetPageWidgetState extends State<SetPageWidget> {
       body: Scrollbar(
         child: ListView.separated(
             itemBuilder: (context, item) {
-              return buildListData(context, titleItems[item], iconItems[item],
-                  subTitleItems[item]);
+              return buildListData(
+                context,
+                titleItems[
+                    item], /*iconItems[item],
+                  subTitleItems[item]*/
+              );
             },
             separatorBuilder: (BuildContext context, int index) =>
                 new Divider(),
@@ -33,17 +39,21 @@ class _SetPageWidgetState extends State<SetPageWidget> {
     );
   }
 
-  Widget buildListData(BuildContext context, String titleItem, Icon iconItem,
-      String subTitleItem) {
+  Widget buildListData(
+    BuildContext context,
+    String titleItem,
+    /*Icon iconItem,
+      String subTitleItem*/
+  ) {
     return new ListTile(
-      leading: iconItem,
+      //leading: iconItem,
       title: new Text(
         titleItem,
         style: TextStyle(fontSize: 18),
       ),
-      subtitle: new Text(
+      /*subtitle: new Text(
         subTitleItem,
-      ),
+      ),*/
       trailing: new Icon(Icons.keyboard_arrow_right),
       onTap: () {
         showDialog(
@@ -74,46 +84,25 @@ class _SetPageWidgetState extends State<SetPageWidget> {
     '给我们评分',
     '推荐给朋友',
     '关于',
-    'wifi_tethering',
-    'wifi_lock',
-    'widgets',
-    'weekend',
-    'web',
-    '图accessible',
-    'ac_unit',
   ];
 
   List<Icon> iconItems = <Icon>[
-    new Icon(Icons.keyboard),
-    new Icon(Icons.print),
-    new Icon(Icons.router),
+    new Icon(Icons.message),
+    new Icon(Icons.monetization_on_outlined),
+    new Icon(Icons.messenger_sharp),
     new Icon(Icons.pages),
     new Icon(Icons.zoom_out_map),
     new Icon(Icons.zoom_out),
     new Icon(Icons.youtube_searched_for),
-    new Icon(Icons.wifi_tethering),
-    new Icon(Icons.wifi_lock),
-    new Icon(Icons.widgets),
-    new Icon(Icons.weekend),
-    new Icon(Icons.web),
-    new Icon(Icons.accessible),
-    new Icon(Icons.ac_unit),
   ];
 
   List<String> subTitleItems = <String>[
-    'subTitle: keyboard',
-    'subTitle: print',
-    'subTitle: router',
-    'subTitle: pages',
-    'subTitle: zoom_out_map',
-    'subTitle: zoom_out',
-    'subTitle: youtube_searched_for',
-    'subTitle: wifi_tethering',
-    'subTitle: wifi_lock',
-    'subTitle: widgets',
-    'subTitle: weekend',
-    'subTitle: web',
-    'subTitle: accessible',
-    'subTitle: ac_unit',
+    'subTitle: 消息',
+    'subTitle: 订购Pro',
+    'subTitle: 接收通知',
+    'subTitle: 意见反馈',
+    'subTitle: 给我们评分',
+    'subTitle: 推荐给朋友',
+    'subTitle: 关于',
   ];
 }

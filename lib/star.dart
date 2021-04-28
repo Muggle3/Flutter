@@ -9,6 +9,9 @@ class _StarPageWidgetState extends State<StarPageWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('效率控'),
+      ),
       body: GridView.count(
         padding: const EdgeInsets.all(10.0),
         crossAxisCount: 3,
